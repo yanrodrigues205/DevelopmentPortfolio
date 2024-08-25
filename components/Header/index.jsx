@@ -48,15 +48,15 @@ export default function Header()
                     <NavLinks sideBar={sideBar}>
                         <CloseSideBar onClick={showSideBar}><FaTimes/></CloseSideBar>
                         <Link href="/">
-                            <Ancora className={setPage("")} onClick={showSideBar}>Home</Ancora>
+                            <Ancora className={setPage("")} onClick={showSideBar}>HOME</Ancora>
                         </Link>
 
                         <Link href="/projects">
-                            <Ancora className={setPage("projects")} onClick={showSideBar}>Projects</Ancora>
+                            <Ancora className={setPage("projects")} onClick={showSideBar}>PROJECTS</Ancora>
                         </Link>
 
                         <Link href="/contacts">
-                            <Ancora className={setPage("contacts")} onClick={showSideBar}>Contacts</Ancora>
+                            <Ancora className={setPage("contacts")} onClick={showSideBar}>CONTACT</Ancora>
                         </Link>
                     </NavLinks>
                 </Content>

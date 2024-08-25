@@ -1,4 +1,5 @@
 import styled from "styled-components";
+
 /**
  * @description COMPONENTE PRINCIPAL DO CONTEÚDO DO HEADER
  */
@@ -7,7 +8,7 @@ export const Container = styled.div`
     height: 100px;
     align-items: center;
     justify-content: center;
-    box-shadow: 4px 10px 10px 2px rgba(172, 172, 172, 0.1);
+    box-shadow: 4px 10px 10px 2px #0097B221;
 `;
 
 /**
@@ -28,6 +29,7 @@ export const ContentTitle = styled.div`
 export const Title = styled.div`
     font-size: 30px;
     font-family: "New Amsterdam", sans-serif;
+    color: #0097b2;
 `;
 
 export const SubTitle = styled.div``;
@@ -39,6 +41,21 @@ export const Menu = styled.div`
     font-size: 30px;
     display: none;
     cursor: pointer;
+    color: #0097b2;
+
+    &:active svg
+    {
+        box-shadow: 1px 1px 18px rgba(2, 172, 202, 1);
+        background-color: #35E1FF5B;
+        border-radius: 10px;
+    }
+
+    &:hover svg
+    {
+        box-shadow: 1px 1px 18px rgba(2, 172, 202, 1);
+        background-color: #35E1FF5B;
+        border-radius: 10px;
+    }
 
     @media (max-width: 600px)
     {
@@ -58,14 +75,15 @@ export const NavLinks = styled.nav`
         position: fixed;
         flex-direction: column;
         height: 100%;
-        background-color: #060606;
+        background-color: var(--primary-color);
         gap: 0px;
         top: 0px;
         right: 0px;
         width: 80%;
         right: ${props => (props.sideBar ? "0" : "-100%")};
         //RESPONSÁVEL POR DEFINIR SE A BARRA DE MENU IRÁ APARECER OU NÃO, SE FOR APARECER RESULTADO IGUAL 0, SE NÃO MENOS 100% PARA ESCONDE-LÁ
-        transition: 0.8s;
+        transition: 2s;
+        z-index: 1;
 
         a{
             margin-top: 100px;
@@ -87,6 +105,21 @@ export const CloseSideBar = styled.div`
     right: 15px;
     top: 35px;
     cursor: pointer;
+    color: #0097b2;
+
+    &:active svg
+    {
+        box-shadow: 1px 1px 18px rgba(2, 172, 202, 1);
+        background-color: #35E1FF5B;
+        border-radius: 10px;
+    }
+
+    &:hover svg
+    {
+        box-shadow: 1px 1px 18px rgba(2, 172, 202, 1);
+        background-color: #35E1FF5B;
+        border-radius: 10px;
+    }
 
     @media (max-width: 600px)
     {
@@ -101,7 +134,7 @@ export const Ancora = styled.span`
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 20px;
+    font-size: 16px;
     height: 100px;
     transition: 0.3s;
     text-decoration: none;
@@ -110,8 +143,8 @@ export const Ancora = styled.span`
 
     &.active
     {
-        border-bottom: 4px solid #ffffff61;
-        border-top: 4px solid #ffffff61;
+        border-bottom: 4px solid #0097B2B6;
+        border-top: 4px solid #0097B2B6;
         border-radius: 10px;
     }//PARTIÇÃO RESPONSÁVEL CASO A ANCORA RECEBER MAIS UMA CLASSE DENOMINADA DE 'active'
 
@@ -122,3 +155,4 @@ export const Ancora = styled.span`
         padding: 0px 10px;
     }
 `;
+
