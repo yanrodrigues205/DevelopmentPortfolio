@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@1,200&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=New+Amsterdam&display=swap');
-::root
+:root
 {
     --background-color: #000000;
-    --primary-color: #000000;
+    --primary-color: #060606;
     --font-color: #ffffff;
 }
 
