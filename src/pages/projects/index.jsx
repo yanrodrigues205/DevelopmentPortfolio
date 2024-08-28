@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from "react"
-import { Container, Content, Grid, Itens, TitleItens, DescriptionItens, ButtonItens, LanguageItens, SearchInput } from "./style";
+import { Container, Content, Grid, Itens, TitleItens, DescriptionItens, ButtonItens, LanguageItens, SearchInput } from "../../styles/projects/style";
 import { FaArrowRight} from "react-icons/fa";
 import Link from "next/link";
 

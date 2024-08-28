@@ -1,4 +1,4 @@
-import { Container } from "./style";
+import { Container } from "../../styles/contacts";
 export default function Contacts()
 {
     return (
