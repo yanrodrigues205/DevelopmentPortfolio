@@ -1,26 +1,26 @@
 import Link from "next/link";
-import { Container, Content, Data, Description, Person, Position, ProjectsButton, Title, DevIcons} from "./style";
+import { Container, Content, Data, Description, Person, Position, ProjectsButton, Title, DevIcons, DownloadButton, ContainerButtons} from "./style";
 import { Typewriter} from "react-simple-typewriter";
-import { FaPhp, FaDocker, FaArrowRight } from 'react-icons/fa';
+import { FaPhp, FaDocker, FaArrowRight, FaDownload } from 'react-icons/fa';
 import { DiReact, DiMysql, DiDart } from 'react-icons/di';
 import { SiFlutter, SiTypescript } from 'react-icons/si';
 
 export default function Home()
 {
-    return (
+  return (
         <>
             <Container>
                 <Content>
                     <Data>
                         <Title>
                             <Typewriter
-                                words={["Who is Yan?", "Learn More About Me."]}
-                                loop={1000}
-                                cursorStyle='|'
+                                words={[`Who is <Yan/> ?`, "Learn More About Me."]}
+                                loop={false}
                                 cursor
-                                typeSpeed={150}
-                                deleteSpeed={150}
-                                delaySpeed={2000}
+                                cursorStyle='|'
+                                typeSpeed={70}
+                                deleteSpeed={50}
+                                delaySpeed={3000}
                             />
                         </Title>
                         <Position>
@@ -57,11 +57,20 @@ export default function Home()
                             </div>
                         </DevIcons>
 
-                        <Link href="/projects">
-                            <ProjectsButton>
-                                PROJECTS <FaArrowRight />
-                            </ProjectsButton>
-                        </Link>
+                        <ContainerButtons>
+                            <Link href="/projects">
+                                <ProjectsButton>
+                                    PROJECTS <FaArrowRight />
+                                </ProjectsButton>
+                            </Link>
+
+                            <Link href="#">
+                                <DownloadButton>
+                                    DOWNLOAD CV <FaDownload></FaDownload>
+                                </DownloadButton>
+                            </Link>
+                        </ContainerButtons>
+
                     </Data>
 
                     <Person>

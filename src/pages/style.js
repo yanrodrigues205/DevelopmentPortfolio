@@ -12,6 +12,17 @@ const moveImage = keyframes`
     }
 `;
 
+const fadeInLeft = keyframes`
+  0% {
+    opacity: 0;
+    transform: translateX(-100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+`;
+
 export const Container = styled.div`
     display: flex;
     align-items: center;
@@ -42,10 +53,11 @@ export const Data = styled.div`
     display: grid;
     width: 50%;
     text-align: start;
-
+    animation: ${fadeInLeft} 1s ease-out;
     @media(max-width: 800px)
     {
         width: 90%;
+        margin-bottom: 80px;
     }
 `;
 
@@ -73,6 +85,12 @@ export const Description = styled.span`
     font-family: "Nunito", sans-serif;
 `;
 
+export const ContainerButtons = styled.div`
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+`;
+
 export const ProjectsButton = styled.button`
     display: flex;
     width: 10rem;
@@ -81,6 +99,9 @@ export const ProjectsButton = styled.button`
     margin-top: 20px;
     font-weight: bold;
     background-color: #02ACCA;
+    text-align: center;
+    flex-direction: row;
+    align-items: center;
     border: none;
     transition: box-shadow 0.3s ease;
     border-radius: 7px;
@@ -97,6 +118,27 @@ export const ProjectsButton = styled.button`
 `;
 
 export const DownloadButton = styled.div`
+    display: flex;
+    width: 10rem;
+    padding: 9px;
+    justify-content: space-between;
+    margin-top: 20px;
+    font-weight: bold;
+    background-color: #000000;
+    border: none;
+    transition: box-shadow 0.3s ease;
+    border-radius: 7px;
+    color: #02ACCA;
+    border: 1px solid #02ACCA;
+    &:hover
+    {
+        box-shadow: 1px 1px 18px rgba(2, 172, 202, 1);
+        background: #02ACCA;
+        cursor: pointer;
+        color: #000000;
+    }
+
+    
 `; 
 
 export const Person = styled.div`
@@ -106,6 +148,7 @@ export const Person = styled.div`
     justify-content: center;
     margin-top: 100px;
     animation: ${moveImage} 3s ease-in-out infinite;
+
     img
     {
         width: 25rem;
@@ -150,4 +193,9 @@ export const DevIcons = styled.div`
     {
         cursor: pointer;
     }
+`;
+
+export const StyledYan = styled.span`
+color: red;  // Altere a cor conforme necessário
+font-weight: bold; // Opcional, para tornar o texto mais destacado
 `;
