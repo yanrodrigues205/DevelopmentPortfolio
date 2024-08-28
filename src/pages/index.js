@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Container, Content, Data, Description, Person, Position, ProjectsButton, Title, DevIcons, DownloadButton, ContainerButtons} from "./style";
+import { Container, Content, Data, Description, Person, Position, ProjectsButton, Title, DevIcons, DownloadButton, ContainerButtons} from "../styles/style";
 import { Typewriter} from "react-simple-typewriter";
 import { FaPhp, FaDocker, FaArrowRight, FaDownload } from 'react-icons/fa';
 import { DiReact, DiMysql, DiDart } from 'react-icons/di';
