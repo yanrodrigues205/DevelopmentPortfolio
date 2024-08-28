@@ -7,11 +7,14 @@ export default function Projects()
 {
     const [ itemsApi, setItemsApi ] = useState([]);
     const [ searchTerm, setSearchTerm ] = useState("");
+    const username = "yanrodrigues205";
+
     useEffect(() => {
-        const username = "yanrodrigues205";
         const abortController = new AbortController();
         const getDataGitHubAPI = async () => {
-            await fetch(`https://api.github.com/users/${username}/repos`)
+            await fetch(`https://api.github.com/users/${username}/repos`,
+                {signal: abortController.signal}
+            )
             .then(async (response) => {
                 if(!response.ok)
                 {
@@ -24,33 +27,28 @@ export default function Projects()
                 console.error(error);
             });
         }
-  
+
         getDataGitHubAPI();
 
         return () => abortController.abort();
-    }, []);
-    
-    const containerRef = useRef(null);
-    useEffect(() => {
-        if (containerRef.current) {
-            console.log("aqui")
-          const elementos = containerRef.current.querySelectorAll('.itens');
-          console.log(elementos); // Aqui você terá uma NodeList de todos os elementos com a classe 'minha-classe'
-        }
-      }, []);
+    }, [username]);
+
+    const filteredItems = itemsApi.filter((item) =>
+        item.name.toLowerCase().includes(searchTerm.toLowerCase())
+    );
 
     return (
         <Container>
             <Content>
                 <SearchInput
                     type="text"
-                    placeholder="Search repositories..."
+                    placeholder="🗺️  Write the Title of a Project... 🗺️"
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
                 />
                 <Grid>
-                    {itemsApi && itemsApi.map(data => (
-                        <Itens>
+                    {filteredItems && filteredItems.map(data => (
+                        <Itens key={data.id}>
                             <TitleItens className="itens">{data.name.toUpperCase()}</TitleItens>
                             <DescriptionItens>{data.description && data.description.toUpperCase()}</DescriptionItens>
                             <LanguageItens>{data.language && data.language.toUpperCase()}</LanguageItens>

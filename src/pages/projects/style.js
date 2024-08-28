@@ -23,10 +23,7 @@ export const Grid = styled.div`
     overflow-x: auto;
     height: 70%;
     gap: 20px;
-
-    &::-webkit-scrollbar
-    {
-    }
+    padding: 5px;
     @media (min-width: 1200px) 
     {
         grid-template-columns: repeat(3, 1fr);
@@ -62,21 +59,39 @@ export const Itens = styled.div`
 
 export const TitleItens = styled.span`
     font-size: 20px;
+    display: block;
     justify-content: space-between;
+    height: 20px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1; 
+    text-overflow: ellipsis;
 `;
 
 export const DescriptionItens = styled.span`
-    font-size: 10px;
-    margin-top: 10px;
-    display: flex;
+   font-size: 10px;
+  margin-top: 10px;
+  display: block;
+  height: 50px; 
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 4; 
+  text-overflow: ellipsis;
+  background-color: black;
+
 `;
 
 export const LanguageItens = styled.button`
     background: white;
     padding: 5px;
     margin-top: 5px;
-    max-width: 70px;
+    width: 80px;
+    height: 35px;
     display: flex;
+    flex-direction: row;
+    align-items: center;
     justify-content: space-around;
     border: none;
     border-radius: 10px;
@@ -85,13 +100,19 @@ export const LanguageItens = styled.button`
 
 export const ButtonItens = styled.button`
     background: #02ACCA;
-    padding: 10px;
+    height: 40px;
     display: flex;
+    flex-direction: row;
+    align-items: center;
     width: 100px;
     margin-top: 5px;
     justify-content: space-around;
     border: none;
     border-radius: 10px;
+    &:hover
+    {
+        box-shadow: 1px 1px 18px rgba(2, 172, 202, 1);
+    }
 `;
 
 export const ContainerInput = styled.div`
@@ -106,5 +127,22 @@ export const SearchInput = styled.input`
   margin-bottom: 20px;
   font-size: 16px;
   border-radius: 5px;
-  border: 1px solid #ddd;
+  max-width: 60%;
+  border: none;
+  margin-bottom: 40px;
+  background-color: #000000;
+  color: white;
+  box-shadow: 1px 1px 15px rgba(2,172,202,1);
+  border-radius: 10px;
+  text-align: center;
+
+  &:focus
+  {
+    box-shadow: 2px 2px 25px rgba(2,172,202,1);
+  }
+
+  @media(max-width: 800px)
+  {
+    max-width: 80%;
+  }
 `;
