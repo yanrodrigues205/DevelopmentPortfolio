@@ -122,6 +122,8 @@ export const ProjectsButton = styled.button`
     margin-top: 20px;
     font-weight: bold;
     background-color: #02ACCA;
+    color: black;
+    text-decoration: none;
     text-align: center;
     flex-direction: row;
     align-items: center;
