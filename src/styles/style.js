@@ -1,5 +1,27 @@
 import styled, { keyframes } from "styled-components";
 
+const moveBottomToCenter = keyframes`
+    0%{
+        opacity: 0;
+        transform: translateY(-150px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+`;
+
+const moveTopToCenter = keyframes`
+    0%{
+        opacity: 0;
+        transform: translateY(150px);
+    }
+    100%{
+        opacity: 1;
+        transform: translateY(0px);
+    }
+`;
+
 const moveImage = keyframes`
     0%{
         transform: translateY(0);
@@ -53,7 +75,7 @@ export const Data = styled.div`
     display: grid;
     width: 50%;
     text-align: start;
-    animation: ${fadeInLeft} 1s ease-out;
+    animation: ${fadeInLeft} 1.5s ease-in-out;
     @media(max-width: 800px)
     {
         width: 90%;
@@ -89,6 +111,7 @@ export const ContainerButtons = styled.div`
     display: flex;
     flex-direction: row;
     gap: 15px;
+    animation: ${moveBottomToCenter} ease-in-out 1.5s;
 `;
 
 export const ProjectsButton = styled.button`
@@ -188,14 +211,10 @@ export const DevIcons = styled.div`
     gap: 10px;
     font-size: 30px;
     margin-top: 10px;
+    animation: ${moveTopToCenter} ease-in-out 1.5s;
 
     svg
     {
         cursor: pointer;
     }
-`;
-
-export const StyledYan = styled.span`
-color: red;  // Altere a cor conforme necessário
-font-weight: bold; // Opcional, para tornar o texto mais destacado
 `;

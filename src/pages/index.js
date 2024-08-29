@@ -64,7 +64,7 @@ export default function Home()
                                 </ProjectsButton>
                             </Link>
 
-                            <Link href="#">
+                            <Link href="document/yan.pdf" download="yan.pdf">
                                 <DownloadButton>
                                     DOWNLOAD CV <FaDownload></FaDownload>
                                 </DownloadButton>
