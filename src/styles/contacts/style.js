@@ -190,6 +190,7 @@ export const SocialMediaLink = styled.span`
     font-size: 20px;
     background: #02ACCA;
     flex-direction: row;
+    color: black;
     align-items: center;
     justify-content: space-around;
     border-radius: 13px;
@@ -248,6 +249,8 @@ export const ButtonInput = styled.button`
     justify-content: space-evenly;
     font-size: 20px;
     background: #02ACCA;
+    color: black;
+
     &:hover
     {
         box-shadow: 1px 1px 18px rgba(2, 172, 202, 1);

@@ -121,6 +121,7 @@ export const ButtonItens = styled.button`
     align-items: center;
     width: 100px;
     margin-top: 5px;
+    color: black;
     justify-content: space-around;
     border: none;
     border-radius: 10px;
