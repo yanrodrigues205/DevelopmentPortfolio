@@ -15,6 +15,21 @@ export const Content = styled.div`
     align-items: center;
     flex-direction: column;
     padding: 20px;
+    @media (min-width: 1200px) 
+    {
+        min-height: 800px;
+    }
+`;
+
+export const ContentTitle = styled.div`
+    display: flex;
+    flex-direction: column;
+    font-size: 40px;
+    text-align: center;
+    padding: 10px;
+    justify-content: center;
+    color: #02ACCA;
+    font-family: "New Amsterdam",sans-serif;
 `;
 
 export const Grid = styled.div`

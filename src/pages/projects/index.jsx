@@ -1,5 +1,5 @@
 import { useEffect, useState, useRef } from "react"
-import { Container, Content, Grid, Itens, TitleItens, DescriptionItens, ButtonItens, LanguageItens, SearchInput } from "../../styles/projects/style";
+import { Container, Content, Grid, Itens, TitleItens, DescriptionItens, ButtonItens, LanguageItens, SearchInput, ContentTitle } from "../../styles/projects/style";
 import { FaArrowRight} from "react-icons/fa";
 import Link from "next/link";
 
@@ -36,10 +36,13 @@ export default function Projects()
     const filteredItems = itemsApi.filter((item) =>
         item.name.toLowerCase().includes(searchTerm.toLowerCase())
     );
-
+    const title = "<GITHUB PROJECTS/>";
     return (
         <Container>
             <Content>
+                <ContentTitle>
+                    {title}
+                </ContentTitle>
                 <SearchInput
                     type="text"
                     placeholder="🗺️  Write the Title of a Project... 🗺️"
@@ -52,7 +55,7 @@ export default function Projects()
                             <TitleItens className="itens">{data.name.toUpperCase()}</TitleItens>
                             <DescriptionItens>{data.description && data.description.toUpperCase()}</DescriptionItens>
                             <LanguageItens>{data.language && data.language.toUpperCase()}</LanguageItens>
-                            <Link href={data.owner.html_url}><ButtonItens>VIEW<FaArrowRight/></ButtonItens></Link>
+                            <Link href={data.html_url}><ButtonItens>VIEW<FaArrowRight/></ButtonItens></Link>
                         </Itens>
                     ))}
                 </Grid>
