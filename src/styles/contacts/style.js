@@ -60,6 +60,7 @@ export const SubContentLeft = styled.div`
 
     @media (max-width: 1200px) {
         width: 100%;
+        margin-bottom: 10px;
         height: calc(50vh - 100px);
     }
 `;
@@ -74,6 +75,7 @@ export const SubContentRight = styled.div`
 
     @media (max-width: 1200px) {
         width: 100%;
+        margin-top: 5px;
         height: calc(50vh - 100px);
     }
 
